@@ -1,0 +1,87 @@
+#:set cs dp(60)
+#:set es dp(100)
+<Content>:
+    orientation:"vertical"
+    adaptive_height: True
+    MDList:
+        MDFlatButton:
+            text:"profile"
+            size_hint:(None, None)
+            size:"100dp", "50dp"
+            on_release:
+                root.button_page(self),
+                lambda x: nav_drawer.set_state("close")
+        MDFlatButton:
+            text:"page2"
+            size_hint:(None, None)
+            size:"100dp", "50dp"
+            on_release:
+                root.button_page(self),
+                lambda x: nav_drawer.set_state("close")
+        MDFlatButton:
+            text:"page3"
+            size_hint:(None, None)
+            size:"100dp", "50dp"
+            on_release:
+                root.button_page(self),
+                lambda x: nav_drawer.set_state("close")
+        MDFlatButton:
+            text:"page4"
+            size_hint:(None, None)
+            size:"100dp", "50dp"
+            on_release:
+                root.button_page(self),
+                lambda x: nav_drawer.set_state("close")
+        MDFlatButton:
+            text:"page5"
+            size_hint:(None, None)
+            size:"100dp", "50dp"
+            on_release:
+                root.button_page(self),
+                lambda x: nav_drawer.set_state("close")
+
+
+
+<Mainline_Scroll_nav@ScrollView>:
+    Content:
+
+
+Mainline:
+    name:"mainline"
+    MDNavigationLayout:
+
+        ScreenManager:
+
+            MDScreen:
+
+                MDToolbar:
+                    title: "Navigation Drawer"
+                    elevation: 10
+                    pos_hint: {"top": 1}
+                    #md_bg_color: get_color_from_hex("#e7e4c0")
+                    #specific_text_color: get_color_from_hex("#4a4939")
+                    left_action_items:
+                        [['menu', lambda x: nav_drawer.set_state("open")]]
+
+    MDFloatLayout:
+        MDCard:
+            size_hint:None, None
+            size:"280dp", "100dp"
+            line_color: .2, .2, .2, .8
+            pos_hint:{"x":.03, "top":.85}
+            Image:
+                source:"images/logoAsset.png"
+            MDLabel:
+                text:"salim"
+                #text:root.uid()
+            MDRoundFlatButton:
+                text:"REQUEST"
+                pos_hint:{"top":.7}
+                size_hint:(None, None)
+                size:"70dp", "40dp"
+
+
+    MDNavigationDrawer:
+        id: nav_drawer
+        #ContentNavigationDrawer:
+        Mainline_Scroll_nav:

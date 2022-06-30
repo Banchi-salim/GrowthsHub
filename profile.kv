@@ -1,0 +1,53 @@
+#:set s dp(160)
+
+Profile:
+    name:"profile"
+    MDGridLayout:
+        rows:2
+        MDBoxLayout:
+            md_bg_color:37/255, 170/255, 225/255, 1
+            size:"300dp", "200dp"
+            radius:15, 15, 0, 0
+            canvas:
+                Color:
+                    rgba:1,1,1,1
+                Ellipse:
+                    pos:self.center_x - (s/2), self.center_y - (s/3)
+                    size:s, s
+                    source: "images/profilepic.jpg"
+            MDIconButton:
+                icon:"arrow-left"
+                pos_hint:{"center_y":.9}
+                on_press:root.on_press_back()
+            MDLabel:
+                text:"saleem_Banchi"
+                halign:"center"
+                pos_hint:{"center_y":.2}
+
+
+        MDCard:
+            MDGridLayout:
+                rows:5
+                padding:"20dp"
+                spacing:"10dp"
+
+                MDLabel:
+                    text:"Profile:"
+                    halign:"left"
+                MDCard:
+                    radius:10,10,10,10
+                    elevation:5
+                    MDLabel:
+                        text:"gh-coins"
+                MDCard:
+                    radius:10,10,10,10
+                    elevation:5
+                    MDLabel:
+                        text:"number of requests:"
+                MDCard:
+                    radius:10,10,10,10
+                    elevation:5
+                    MDLabel:
+                        text:"jobs completed"
+
+

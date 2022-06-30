@@ -1,0 +1,68 @@
+<Content2>:
+    orientation:"vertical"
+    adaptive_height: True
+    MDList:
+        MDFlatButton:
+            text:"page1"
+            size_hint:(None, None)
+            size:"100dp", "50dp"
+            on_release:
+                root.button_page2(self)
+                lambda x: nav_drawer.set_state("close")
+        MDFlatButton:
+            text:"page2"
+            size_hint:(None, None)
+            size:"100dp", "50dp"
+            on_release:
+                root.button_page2(self),
+                lambda x: nav_drawer.set_state("close")
+        MDFlatButton:
+            text:"mainline"
+            size_hint:(None, None)
+            size:"100dp", "50dp"
+            on_release:
+                root.button_page2(self),
+                lambda x: nav_drawer.set_state("close")
+        MDFlatButton:
+            text:"page4"
+            size_hint:(None, None)
+            size:"100dp", "50dp"
+            on_release:
+                root.button_page2(self),
+                lambda x: nav_drawer.set_state("close")
+        MDFlatButton:
+            text:"page5"
+            size_hint:(None, None)
+            size:"100dp", "50dp"
+            on_release:
+                root.button_page2(self),
+                lambda x: nav_drawer.set_state("close")
+
+
+
+<Scrollview2@ScrollView>:
+    Content2:
+
+
+
+
+Page2:
+    name:"page2"
+
+    MDNavigationLayout:
+
+        ScreenManager:
+
+            MDScreen:
+
+                MDToolbar:
+                    title: "Navigation Drawer"
+                    elevation: 10
+                    pos_hint: {"top": 1}
+                    #md_bg_color: get_color_from_hex("#e7e4c0")
+                    #specific_text_color: get_color_from_hex("#4a4939")
+                    left_action_items:
+                        [['menu', lambda x: nav_drawer.set_state("open")]]
+        MDNavigationDrawer:
+            id: nav_drawer
+            Scrollview2:
